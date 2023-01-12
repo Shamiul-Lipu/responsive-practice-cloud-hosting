@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+:root {
+    --primary-color: #023E7D;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -12,16 +16,16 @@ body {
     line-height: 1.6;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
-    color: #333;
+    color: #979DAC;
 }
 
-h1, 
+h1,
 h2 {
     font-weight: 3000;
     line-height: 1.2;
@@ -37,19 +41,21 @@ img {
 
 /* header styles */
 .navbar {
-    background-color: #023E7D;
+    background-color: var(--primary-color);
     color: whitesmoke;
     height: 70px;
-} 
+}
 
-.header-container{
-    max-width:1100px;
+/* Utility Classes */
+
+.container {
+    max-width: 1100px;
     margin: 0 auto;
     overflow: auto;
     padding: 0 40px;
 }
 
-.navbar .flex{
+.navbar .flex {
     justify-content: space-between;
 }
 
@@ -57,19 +63,122 @@ img {
     display: flex;
 }
 
-.navbar a{
+.navbar a {
     color: whitesmoke;
     padding: 10px;
     margin: 0 5px;
 }
 
 .navbar a:hover {
-    border-bottom: 2px whitesmoke solid; 
+    border-bottom: 2px whitesmoke solid;
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-outline {
+    background-color: transparent;
+    border: 1px #fff solid;
+}
+.btn:hover {
+    transform: scale(0.98);
+}
+
+/* Showcases */
+
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: whitesmoke;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    grid-template-columns: 50% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+
+.showcase-form {
+    /* to use top bottom left right property use position value relative or absolute */
+    position: relative;
+    top: 60px;
+    /* setting up this height will overflow scroll bar on markup */
+    /* .showcase .grid overflow value:visible will represent it nicely */
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+    border: 0;
+    border-bottom: 1px solid #979DAC;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after{
+    content:'';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right:0;
+    left: 0;
+    background: #fff;
+    transform: scaleY(-3deg);
+    -webkit-transform: scaleY(-3deg);
+    -moz-transform: scaleY(-3deg);
+    -ms-transform: scaleY(-3deg);
 }
