@@ -316,17 +316,17 @@ img {
 
 .showcase::before,
 .showcase::after {
-    content: '';
+    content: ' ';
     position: absolute;
-    height: 100px;
-    bottom: -70px;
+    height: 160px;
+    bottom: -84px;
     right: 0;
     left: 0;
     background: #fff;
-    transform: scaleY(-3deg);
-    -webkit-transform: scaleY(-3deg);
-    -moz-transform: scaleY(-3deg);
-    -ms-transform: scaleY(-3deg);
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
 }
 
 /* Statistic */
