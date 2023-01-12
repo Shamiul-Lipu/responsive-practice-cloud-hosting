@@ -262,7 +262,6 @@ img {
 
 /* Showcases */
 
-
 .showcase {
     height: 400px;
     background-color: var(--primary-color);
@@ -284,6 +283,9 @@ img {
     overflow: visible;
 }
 
+.showcase-text{
+    animation: slideInfromLeft 1s ease-in;
+}
 .showcase-form {
     /* to use top bottom left right property use position value relative or absolute */
     position: relative;
@@ -295,6 +297,7 @@ img {
     padding: 40px;
     z-index: 100;
     justify-self: flex-end;
+    animation: slideInfromRight 1s ease-in;
 }
 
 .showcase-form .form-control {
@@ -332,6 +335,7 @@ img {
 /* Statistic */
 .stats {
     padding-top: 100px;
+    animation: slideInfromBottom 1s ease-in;
 }
 
 .stats-heading {
@@ -421,6 +425,41 @@ img {
 }
 
 /* animation */
+@keyframes slideInfromLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInfromRight {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInfromTop {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInfromBottom {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 
 /* Tavlets and under */
 @media(max-width: 768px) {
@@ -442,12 +481,15 @@ img {
     .showcase-text {
         text-align: center;
         margin-top: 40px;
+        animation: slideInfromTop;
     }
 
     .showcase-form {
         justify-self: center;
         margin: auto;
+        animation: slideInfromBottom 1s ease-in;
     }
+
 
     .cli .grid>*:first-child {
         grid-column: 1;
